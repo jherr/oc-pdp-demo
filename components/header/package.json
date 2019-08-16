@@ -25,6 +25,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-es6-compiler": "1.1.7"
+    "oc-template-es6-compiler": "^1.1.7"
   }
 }

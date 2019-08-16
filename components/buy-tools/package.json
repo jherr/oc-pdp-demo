@@ -21,6 +21,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-react-compiler": "5.1.10"
+    "oc-template-react-compiler": "^5.1.10"
   }
 }

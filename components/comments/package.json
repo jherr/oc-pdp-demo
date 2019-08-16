@@ -1,22 +1,18 @@
 {
-  "name": "footer",
+  "name": "comments",
   "description": "",
   "version": "1.0.0",
   "oc": {
     "files": {
       "data": "server.js",
-      "static": [
-        "img",
-        "css"
-      ],
       "template": {
-        "src": "view.js",
-        "type": "oc-template-es6"
+        "src": "app.js",
+        "type": "oc-template-react"
       }
     },
     "parameters": {
       "name": {
-        "default": "Jane Doe",
+        "default": "World",
         "description": "Your name",
         "example": "Jane Doe",
         "mandatory": false,
@@ -25,6 +21,6 @@
     }
   },
   "devDependencies": {
-    "oc-template-es6-compiler": "^1.1.7"
+    "oc-template-react-compiler": "5.1.10"
   }
 }
