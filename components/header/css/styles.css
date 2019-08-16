@@ -1,0 +1,6 @@
+.container {
+  display: grid;
+  grid-template-columns: 90% 10%;
+  background: lightblue;
+  padding: 1em;
+}

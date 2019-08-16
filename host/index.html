@@ -1,0 +1,65 @@
+<html>
+  <head>
+<style>
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+  padding: 2em;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  column-gap: 1em;
+}
+</style>
+<script>
+window.oc = window.oc || {};
+oc.conf = oc.conf || {};
+oc.conf.templates = (oc.conf.templates || [] ).concat([
+  {"type":"oc-template-es6","version":"1.0.1","externals":[]},
+  {"type":"oc-template-jade","version":"7.0.0","externals":[{"global":"jade","url":"https://unpkg.com/oc-jade-legacy@1.11.1/runtime.js","name":"jade"}]},
+  {"type":"oc-template-handlebars","version":"6.0.15","externals":[{"global":"Handlebars","url":"https://unpkg.com/handlebars@4.1.2/dist/handlebars.runtime.min.js","name":"handlebars"}]},
+  {"type":"oc-template-es6","version":"1.0.1","externals":[]},
+  {"type":"oc-template-react","version":"2.0.17","externals":[{"global":["Object","assign"],"url":"https://unpkg.com/es6-object-assign@1.1.0/dist/object-assign-auto.min.js","name":"Object.assign"},{"global":"PropTypes","url":"https://unpkg.com/prop-types@15.7.2/prop-types.min.js","name":"prop-types"},{"global":"React","url":"https://unpkg.com/react@16.8.6/umd/react.production.min.js","name":"react"},{"global":"ReactDOM","url":"https://unpkg.com/react-dom@16.8.6/umd/react-dom.production.min.js","name":"react-dom"}]}
+]);
+
+window.oc.cart = {
+  count: 0,
+  addToCart() {
+    window.oc.cart.count += 1;
+    window.oc.events.fire('cartChange');
+  },
+};
+window.oc.product = {
+  name: 'Dog 1',
+  image: 'https://images.dog.ceo/breeds/puggle/IMG_071023.jpg',
+  setProduct(name, image) {
+    window.oc.product.name = name;
+    window.oc.product.image = image;
+    window.oc.events.fire('productChange');
+  }
+};
+</script>
+  </head>
+  <body>
+    <div>
+      <oc-component href="//localhost:3030/header/1.0.0/"></oc-component>
+    </div>
+    <div class="content">
+      <div class="top">
+        <oc-component href="//localhost:3030/product-hero/1.0.0/"></oc-component>
+        <oc-component href="//localhost:3030/buy-tools/1.0.0/"></oc-component>    
+      </div>
+      <oc-component href="//localhost:3030/product-description/1.0.0/"></oc-component>
+    </div>
+    <div>
+      <oc-component href="//localhost:3030/footer/1.0.0/"></oc-component>
+    </div>
+    <script src="http://localhost:3030/oc-client/0.48.1/static/src/oc-client.min.js"></script>
+  </body>
+</html>
